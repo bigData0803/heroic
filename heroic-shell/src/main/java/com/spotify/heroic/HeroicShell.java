@@ -69,6 +69,8 @@ public class HeroicShell {
     public static final SerializerFramework serializer = ShellProtocol.setupSerializer();
 
     public static void main(String[] args) throws IOException {
+        HeroicLogging.configureNetty();
+
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
             try {
                 log.error("Uncaught exception in thread {}, exiting...", t, e);
